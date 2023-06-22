@@ -6,3 +6,51 @@
 }
 
 /* GENERAL */
+body{
+    background-image: url('https://images3.alphacoders.com/103/1039919.jpg');
+    background-size: cover;
+}
+
+.my-container{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 1000px;
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    background-color: lightcoral;
+    border: 1px solid black;
+}
+
+.cell81{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    background-color: lightcoral;
+    border: 1px solid black;
+}
+
+.cell49{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    background-color: lightcoral;
+    border: 1px solid black;
+}
+
+.active{
+    background-color: aqua;
+}

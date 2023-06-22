@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template</title>
+        <title>Campominato dom</title>
 
          <!-- AWESOMEFONT -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,6 +16,21 @@
     </head>
 
     <body>
+        <h1 class="text-center text-white">
+            Gioca e vinci!
+        </h1>
+        <div class="text-center">
+            <label for="userChoice" class="form-label text-white">Difficoltà di gioco</label>
+            <select name="userChoice" id="userChoice">
+                <option value="easy">Facile</option>
+                <option value="medium">Medio</option>
+                <option value="hard">Difficile</option>
+            </select>
+          <button id="my-btn" type="button">
+            Avvia il gioco
+         </button>  
+        </div>
+        
         
         <script type="text/javascript" src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
