@@ -6,6 +6,8 @@ document.body.append(newContainer);
 const bombNumber = 16;
 const arrayBombs = [];
 const arrayNoBombs = [];
+const loser = document.getElementById('loser');
+const winner = document.getElementById('winner');
 
 // for (let i = 0; i < bombNumber; i++){
 //     const bomb = randomBomb(1, 100);
@@ -29,6 +31,8 @@ function bombGenerator(max){
 
 myBtn.addEventListener('click', 
     function(){
+        loser.classList.remove('d-block');
+        winner.classList.remove('d-block');
         let userChoice = document.getElementById('userChoice').value;
         newContainer.innerHTML = '';
         if (userChoice == 'easy'){
@@ -50,11 +54,14 @@ myBtn.addEventListener('click',
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
                         if(arrayBombs.includes(parseInt(cell.innerText))){
+                            loser.classList.add('d-block',)
                             console.log('hai perso')
                             this.classList.add('bomb');
                         }
                         else if (cellRimanenti == 1){
-                            console.log('hai vinto')
+                            console.log('hai vinto');
+                            winner.classList.add('d-block');
+                            
                         }
                     }
                     }
@@ -79,11 +86,13 @@ myBtn.addEventListener('click',
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
                         if(arrayBombs.includes(parseInt(cell.innerText))){
+                            loser.classList.add('d-block',)
                             console.log('hai perso')
                             this.classList.add('bomb');
                         }
                         else if (cellRimanenti == 1){
-                            console.log('hai vinto')
+                            console.log('hai vinto');
+                            winner.classList.add('d-block');
                         }
                     }
                     }
@@ -111,11 +120,14 @@ myBtn.addEventListener('click',
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
                         if(arrayBombs.includes(parseInt(cell.innerText))){
+                            
+                            loser.classList.add('d-block',)
                             console.log('hai perso')
                             this.classList.add('bomb');
                         }
                         else if (cellRimanenti == 1){
-                            console.log('hai vinto')
+                            console.log('hai vinto');
+                            winner.classList.add('d-block');
                         }
                     }
                     }
