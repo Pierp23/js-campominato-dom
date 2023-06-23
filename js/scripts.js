@@ -26,20 +26,6 @@ function bombGenerator(max){
     }
     }
 }
-// bombGenerator(100);
-
-// while (arrayNoBombs.length < (100 - arrayBombs.length)){
-//     const noBomb = randomBomb(1, 100);
-//     if(!arrayNoBombs.includes(noBomb) && !arrayBombs.includes(noBomb)){
-//         arrayNoBombs.push(noBomb);
-//     }
-// }
-
-
-
-
-
-
 
 myBtn.addEventListener('click', 
     function(){
@@ -53,21 +39,26 @@ myBtn.addEventListener('click',
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.innerText = i;
-
+            
             cell.addEventListener('click',
-                function (){
-                    const clickedBomb = document.querySelectorAll('.bomb');
-                    if (clickedBomb.length == 0){
+                    function (){
+                        const clickedBomb = document.querySelectorAll('.bomb');
+                        const clickedCell = document.querySelectorAll('.active');
+                        const cellRimanenti = 100 - bombNumber - clickedCell.length
+                        console.log('mancano ' + cellRimanenti + ' celle')
+                    if (clickedBomb.length == 0 && cellRimanenti > 0){
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
-
                         if(arrayBombs.includes(parseInt(cell.innerText))){
                             console.log('hai perso')
                             this.classList.add('bomb');
                         }
+                        else if (cellRimanenti == 1){
+                            console.log('hai vinto')
+                        }
                     }
-                }
-            )
+                    }
+                )
             newContainer.append(cell);
             }
         }
@@ -81,13 +72,18 @@ myBtn.addEventListener('click',
                 cell.addEventListener('click',
                     function (){
                         const clickedBomb = document.querySelectorAll('.bomb');
-                        if (clickedBomb.length == 0){
+                        const clickedCell = document.querySelectorAll('.active');
+                        const cellRimanenti = 81 - bombNumber - clickedCell.length
+                        console.log('mancano ' + cellRimanenti + ' celle')
+                    if (clickedBomb.length == 0 && cellRimanenti > 0){
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
-
                         if(arrayBombs.includes(parseInt(cell.innerText))){
                             console.log('hai perso')
                             this.classList.add('bomb');
+                        }
+                        else if (cellRimanenti == 1){
+                            console.log('hai vinto')
                         }
                     }
                     }
@@ -98,20 +94,28 @@ myBtn.addEventListener('click',
         else if (userChoice == 'hard'){
             bombGenerator(49);
             console.log(arrayBombs);
+            // let noBomb = (49 - bombNumber);
+            //             console.log('no bombe',noBomb)
             for (let i = 1; i <= 49; i++){
                 const cell = document.createElement('div');
                 cell.classList.add('cell49');
                 cell.innerHTML = i;
+                
                 cell.addEventListener('click',
                     function (){
                         const clickedBomb = document.querySelectorAll('.bomb');
-                        if (clickedBomb.length == 0){
+                        const clickedCell = document.querySelectorAll('.active');
+                        const cellRimanenti = 49 - bombNumber - clickedCell.length
+                        console.log('mancano ' + cellRimanenti + ' celle')
+                    if (clickedBomb.length == 0 && cellRimanenti > 0){
                         this.classList.add('active');
                         console.log('Il numero da lei selezionato è:', this.innerHTML);
-
                         if(arrayBombs.includes(parseInt(cell.innerText))){
                             console.log('hai perso')
                             this.classList.add('bomb');
+                        }
+                        else if (cellRimanenti == 1){
+                            console.log('hai vinto')
                         }
                     }
                     }
