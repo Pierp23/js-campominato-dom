@@ -54,3 +54,7 @@ body{
 .active{
     background-color: aqua;
 }
+
+.bomb{
+    background-color: red;
+}
